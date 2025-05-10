@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">ShowTrack</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="already_have_account">I already have an account?\u0020\u0020</string>
+    <string name="login">Login</string>
+    <string name="or_sign_up_with">Or Sign up with</string>
+    <string name="hi_emojis">Welcome 🎬</string>
+    <string name="enter_details">Please enter your details.</string>
+    <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="lets_get_started">Let\'s get started</string>
+    <string name="full_name">Full Name</string>
+</resources>
