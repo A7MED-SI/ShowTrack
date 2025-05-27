@@ -1,4 +1,4 @@
-package com.example.showtrack.features.authentication.presentation.screens
+package com.example.showtrack.features.movieDetails.presentation.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -111,7 +111,7 @@ fun MovieDetailsScreen(
                 .padding(innerPadding)
                 .fillMaxSize()
                 .verticalScroll(rememberScrollState())
-                .background(Color(0xFF13121A))
+                .background(MaterialTheme.colorScheme.background)
                 .padding(16.dp),
             horizontalAlignment = Alignment.Start
         ) {

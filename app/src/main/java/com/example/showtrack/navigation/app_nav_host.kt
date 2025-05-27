@@ -8,12 +8,13 @@ import androidx.navigation.compose.rememberNavController
 import com.example.showtrack.features.authentication.presentation.screens.LoginScreen
 import com.example.showtrack.features.authentication.presentation.screens.SignUpScreen
 import com.example.showtrack.features.authentication.presentation.screens.WelcomeScreen
-import com.example.showtrack.features.authentication.presentation.screens.MovieDetailsScreen
+import com.example.showtrack.features.home.presentation.screens.HomeScreen
+import com.example.showtrack.features.movieDetails.presentation.screens.MovieDetailsScreen
 @Composable
 fun AppNavHost(navController: NavHostController = rememberNavController()) {
     NavHost(
         navController = navController,
-        startDestination = Screen.MovieDetails.route
+        startDestination = Screen.Home.route
     ) {
         composable(Screen.Welcome.route) {
             WelcomeScreen(
@@ -40,6 +41,9 @@ fun AppNavHost(navController: NavHostController = rememberNavController()) {
                 onProfileClick = { navController.navigate("profile") }
             )
         }
-
+        composable(Screen.Home.route) {
+            HomeScreen(
+            )
+        }
     }
 }
