@@ -25,11 +25,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import androidx.compose.foundation.clickable
+
 
 @Composable
 fun SearchBar(
     modifier: Modifier = Modifier,
-    onSearch: (String) -> Unit = {}
+    onSearch: (String) -> Unit = {},
+    onFilterClick: () -> Unit = {}
 ) {
     var query = remember { mutableStateOf("") }
 
@@ -65,7 +68,16 @@ fun SearchBar(
                     innerTextField()
                 }
             )
-            Icon(Icons.Default.Tune, contentDescription = "Filter", tint = Color.Gray)
+            Spacer(modifier = Modifier.width(8.dp))
+
+            Icon(
+                imageVector = Icons.Default.Tune,
+                contentDescription = "Filter",
+                tint = Color.Gray,
+                modifier = Modifier
+                    .clickable { onFilterClick() }
+            )
+
         }
     }
 }

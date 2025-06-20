@@ -12,7 +12,7 @@ import com.example.showtrack.features.home.presentation.screens.HomeScreen
 import com.example.showtrack.features.movieDetails.presentation.screens.MovieDetailsScreen
 import com.example.showtrack.features.profile.presentation.screens.ProfileScreen
 import com.example.showtrack.features.profile.presentation.screens.EditProfileScreen
-
+import com.example.showtrack.features.search.presentation.screens.FilterSearchScreen
 @Composable
 fun AppNavHost(navController: NavHostController = rememberNavController()) {
     NavHost(
@@ -45,14 +45,25 @@ fun AppNavHost(navController: NavHostController = rememberNavController()) {
             )
         }
         composable(Screen.Home.route) {
-            HomeScreen(
-            )
+            HomeScreen(navController)
         }
+
         composable(Screen.Profile.route) {
             ProfileScreen()
         }
         composable(Screen.edit_Profile.route) {
             EditProfileScreen()
+        }
+        composable("filterSearch") {
+            FilterSearchScreen(
+                selectedTypes = listOf(),
+                selectedGenres = listOf(),
+                selectedRating = null,
+                onBack = { navController.popBackStack() },
+                onApply = { types, genres, rating,selectedYear ->
+                    navController.popBackStack()
+                }
+            )
         }
 
     }
